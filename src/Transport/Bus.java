@@ -1,19 +1,27 @@
 package Transport;
 
+import Driver.Driver;
 import Driver.DriverD;
+import Mechanic.Mechanic;
+
+import java.util.List;
 
 public class Bus extends Transport {
-    private  TypeCapacity typeCapacity;
+    private TypeCapacity typeCapacity;
 
-    public Bus(String brand, String model, double engineVolume,TypeCapacity typeCapacity) {
-        super(brand, model, engineVolume);
+    public Bus(String brand, String model, double engineVolume, int mechanicQuantity, DriverD driver, TypeCapacity typeCapacity, Mechanic mechanic) {
+        super(brand, model, engineVolume, mechanicQuantity, driver);
         this.typeCapacity = typeCapacity;
+        setDriver(driver);
+
+    }
+    public Bus(String brand, String model, double engineVolume, List<Driver> drivers, List<Mechanic> mechanics, int mechanicQuantity, Driver driver) {
+        super(brand,model,engineVolume,drivers,mechanics,mechanicQuantity,driver);
     }
 
     public TypeCapacity getTypeCapacity() {
         return typeCapacity;
     }
-
     public void setTypeCapacity(TypeCapacity typeCapacity) {
         this.typeCapacity = typeCapacity;
     }
@@ -41,6 +49,12 @@ public class Bus extends Transport {
     public void passDiagnostics() {
        throw new UnsupportedOperationException("Автобус  "+getBrand() +getModel()+" не можжет пройти диагностику");
     }
+
+    @Override
+    public void createMechanicTeam(Mechanic... mechanics) {
+
+    }
+
 
     @Override
     public String toString() {

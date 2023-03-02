@@ -1,6 +1,5 @@
 package Driver;
 
-import Transport.Transport;
 
 import java.util.Objects;
 
@@ -85,6 +84,7 @@ public abstract class Driver {
                 "name='" + name + '\'' +
                 ", availabilityOfRights=" + availabilityOfRights +
                 ", experience=" + experience +
+                ", category='" + category + '\'' +
                 '}';
     }
 }

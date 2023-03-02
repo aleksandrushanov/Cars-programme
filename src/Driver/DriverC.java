@@ -27,5 +27,8 @@ public class DriverC<T extends Transport> extends Driver{
                 transport.getModel() + " и будет участвовать в гонке");
         transport.printType();
     }
-
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }

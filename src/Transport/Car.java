@@ -1,17 +1,18 @@
 package Transport;
 
+import Driver.DriverB;
+import Mechanic.Mechanic;
+
 
 
 public class Car extends Transport {
     private  BodyType typeBody;
 
-    public Car(String brand,
-               String model,
-               double engineVolume,BodyType typeBody) {
-        super(brand, model, engineVolume);
+    public Car(String brand, String model, double engineVolume, int mechanicQuantity, DriverB driver, BodyType typeBody, Mechanic mechanic) {
+        super(brand, model, engineVolume, mechanicQuantity, driver);
         this.typeBody = typeBody;
-    }
 
+    }
     public BodyType getTypeBody() {
         return typeBody;
     }
@@ -45,9 +46,8 @@ public class Car extends Transport {
     }
 
     @Override
-    public String toString() {
-        return "Бернед " + getBrand() + '\'' +
-                ", Модель'" + getModel() + '\'' + ",  Объём двигтаеля '" + getEngineVolume() + " " +getTypeBody()  ;
+    public void createMechanicTeam(Mechanic... mechanics) {
+
     }
 
     @Override
@@ -71,6 +71,13 @@ public class Car extends Transport {
         int speed= (int) ((Math.random()*((maxSpeed-minSpeed)+1))+minSpeed);
         System.out.println("Максимальная скорость автобуса " + speed + " км/ч");
     }
+    @Override
+    public String toString() {
+        return "Бернед " + getBrand() + '\'' +
+                ", Модель'" + getModel() + '\'' + ",  Объём двигтаеля '" + getEngineVolume() + " " +getTypeBody()  ;
+    }
+
+
 }
 
 
