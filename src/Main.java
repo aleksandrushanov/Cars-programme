@@ -6,10 +6,7 @@ import Mechanic.Mechanic;
 import Transport.*;
 import Mechanic.STO;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static Mechanic.MechanicSkills.*;
 
@@ -37,13 +34,13 @@ public class Main {
         System.out.println("----------------------------------------");
 
         List<Driver> drivers = new ArrayList<>();
-        DriverB<Car> driver = new DriverB<Car>("Ivan", true, 5,"B");
-        DriverC<Truck> driver1 = new DriverC<Truck>("Andrei", true, 8,"C");
-        DriverD<Bus> driver2 = new DriverD<Bus>("Viktor", true, 6,"D");
-        DriverB<Car> driver3 = new DriverB<Car>("Elena", true, 5,"B");
-        DriverC<Truck> driver4 = new DriverC<Truck>("Yaroslav", true, 8,"C");
-        DriverD<Bus> driver5 = new DriverD<Bus>("Petr", true, 6,"D");
-        drivers.add(driver);
+        DriverB<Car> driver1 = new DriverB<Car>("Ivan", true, 5,"B");
+        DriverC<Truck> driver2 = new DriverC<Truck>("Andrei", true, 8,"C");
+        DriverD<Bus> driver3 = new DriverD<Bus>("Viktor", true, 6,"D");
+        DriverB<Car> driver4 = new DriverB<Car>("Elena", true, 5,"B");
+        DriverC<Truck> driver5 = new DriverC<Truck>("Yaroslav", true, 8,"C");
+        DriverD<Bus> driver6 = new DriverD<Bus>("Petr", true, 6,"D");
+        drivers.add(driver6);
         drivers.add(driver1);
         drivers.add(driver2);
         drivers.add(driver3);
@@ -54,37 +51,37 @@ public class Main {
 
 
         List<Transport> transports = new ArrayList<>();
-        Car car = new Car("Lada","granta",1.6,2,driver,BodyType.SEDAN,mechanic);
+        Car car = new Car("Lada","granta",1.6,2,driver1,BodyType.SEDAN,mechanic);
         System.out.println(car);
-        Car car1 = new Car("BMW", "x6", 3.0,1,driver3,BodyType.COPE,mechanic4);
+        Car car1 = new Car("BMW", "x6", 3.0,1,driver4,BodyType.COPE,mechanic4);
         System.out.println(car1);
-        Car car2 = new Car("Toyota", "supra", 3.0,3,driver,BodyType.COPE,mechanic);
+        Car car2 = new Car("Toyota", "supra", 3.0,3,driver4,BodyType.COPE,mechanic);
         System.out.println(car2);
-        Car car3 = new Car("nissan", "skyline", 3.0,4,driver,BodyType.SEDAN,mechanic);
+        Car car3 = new Car("nissan", "skyline", 3.0,4,driver4,BodyType.SEDAN,mechanic);
         System.out.println(car3);
         car1.passDiagnostics();
         System.out.println("----------------------------------------");
 
-        Bus bus = new Bus("nefaz", "150", 3.0,2,driver2,TypeCapacity.BIG,mechanic);
+        Bus bus = new Bus("nefaz", "150", 3.0,2,driver6,TypeCapacity.BIG,mechanic);
         System.out.println(bus);
-        Bus bus1 = new Bus("volvo", "c250", 4.0,4,driver2,TypeCapacity.ESPECIALLY_SMALL,mechanic4);
+        Bus bus1 = new Bus("volvo", "c250", 4.0,4,driver6,TypeCapacity.ESPECIALLY_SMALL,mechanic4);
         System.out.println(bus1);
-        Bus bus2 = new Bus("Maz", "450", 4.0,2,driver2,TypeCapacity.AVERAGE,mechanic);
+        Bus bus2 = new Bus("Maz", "450", 4.0,2,driver3,TypeCapacity.AVERAGE,mechanic);
         System.out.println(bus2);
-        Bus bus3 = new Bus("Man", "rx", 2.0,1,driver2,TypeCapacity.ESPECIALLY_SMALL,mechanic4);
+        Bus bus3 = new Bus("Man", "rx", 2.0,1,driver3,TypeCapacity.ESPECIALLY_SMALL,mechanic4);
         System.out.println(bus3);
         /*bus.passDiagnostics();*/
 
 
         System.out.println("----------------------------------------");
 
-        Truck truck = new Truck("scania", "rbx", 5.0,2,driver1,LoadCapacity.N1,mechanic);
+        Truck truck = new Truck("scania", "rbx", 5.0,2,driver2,LoadCapacity.N1,mechanic);
         System.out.println(truck);
-        Truck truck1 = new Truck("volvo", "prp", 6.0,2,driver4,LoadCapacity.N1,mechanic);
+        Truck truck1 = new Truck("volvo", "prp", 6.0,2,driver5,LoadCapacity.N1,mechanic);
         System.out.println(truck1);
-        Truck truck2 = new Truck("man", "pit", 6.0,2,driver1,LoadCapacity.N3,mechanic4);
+        Truck truck2 = new Truck("man", "pit", 6.0,2,driver5,LoadCapacity.N3,mechanic4);
         System.out.println(truck2);
-        Truck truck3 = new Truck("Freightliner", "Cascadia", 10.0,1,driver1,LoadCapacity.N2,mechanic5);
+        Truck truck3 = new Truck("Freightliner", "Cascadia", 10.0,1,driver2,LoadCapacity.N2,mechanic5);
         System.out.println(truck3);
 
 
@@ -122,7 +119,43 @@ public class Main {
             transportAndMechanic.put(transport, transport.getMechanics());
         }
         System.out.println(transportAndMechanic);
+        System.out.println("--------------------------");
 
+        // задание iterator и set
+        DriverB<Car> ivan = new DriverB<Car>("Ivan", true, 5,"B");
+        DriverC<Truck> andrei = new DriverC<Truck>("Andrei", true, 8,"C");
+        DriverD<Bus> victor = new DriverD<Bus>("Viktor", true, 6,"D");
+        DriverB<Car> elena = new DriverB<Car>("Elena", true, 5,"B");
+        DriverC<Truck> yaroslav = new DriverC<Truck>("Yaroslav", true, 8,"C");
+        DriverD<Bus> petr = new DriverD<Bus>("Petr", true, 6,"D");
+        DriverB<Car> ivan1 = new DriverB<Car>("Ivan", true, 5,"B");
+        DriverC<Truck> andrei1 = new DriverC<Truck>("Andrei", true, 8,"C");
+        DriverD<Bus> victor1 = new DriverD<Bus>("Viktor", true, 6,"D");
+        DriverB<Car> elena1 = new DriverB<Car>("Elena", true, 5,"B");
+        DriverC<Truck> yaroslav1 = new DriverC<Truck>("Yaroslav", true, 8,"C");
+        DriverD<Bus> petr1 = new DriverD<Bus>("Petr", true, 6,"D");
+
+        Set<Driver> drivers1 = new HashSet<>();
+        drivers1.add(ivan);
+        drivers1.add(ivan1);
+        drivers1.add(andrei);
+        drivers1.add(andrei1);
+        drivers1.add(victor);
+        drivers1.add(victor1);
+        drivers1.add(elena);
+        drivers1.add(elena1);
+        drivers1.add(yaroslav);
+        drivers1.add(yaroslav1);
+        drivers1.add(petr);
+        drivers1.add(petr1);
+        Iterator<Driver> iterator = drivers1.iterator();
+
+        /*for (Driver driver : drivers1) { //прстой вывод водителей
+            System.out.println(driver);
+        }*/
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
 
     }
 }
