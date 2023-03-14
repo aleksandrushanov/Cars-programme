@@ -43,10 +43,7 @@ public class Truck extends Transport {
         System.out.println("Грузовик "+getBrand() +getModel()+" проходит диагностику");
     }
 
-    @Override
-    public void createMechanicTeam(Mechanic... mechanics) {
 
-    }
 
 
     @Override

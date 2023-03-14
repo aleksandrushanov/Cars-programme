@@ -45,10 +45,6 @@ public class Car extends Transport {
         System.out.println("Автомобиль "+getBrand() +getModel()+" проходит диагностику");
     }
 
-    @Override
-    public void createMechanicTeam(Mechanic... mechanics) {
-
-    }
 
     @Override
     public void pitStop() {

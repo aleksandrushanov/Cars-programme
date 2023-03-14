@@ -7,7 +7,9 @@ import Transport.*;
 import Mechanic.STO;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static Mechanic.MechanicSkills.*;
 
@@ -114,6 +116,13 @@ public class Main {
         sto.addTransport(truck);
 
         sto.runTo();
+
+        Map<Transport<?>, List<Mechanic>> transportAndMechanic = new HashMap<>();
+        for (Transport<?> transport : transports) {
+            transportAndMechanic.put(transport, transport.getMechanics());
+        }
+        System.out.println(transportAndMechanic);
+
 
     }
 }

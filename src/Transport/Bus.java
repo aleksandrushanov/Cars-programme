@@ -50,11 +50,6 @@ public class Bus extends Transport {
        throw new UnsupportedOperationException("Автобус  "+getBrand() +getModel()+" не можжет пройти диагностику");
     }
 
-    @Override
-    public void createMechanicTeam(Mechanic... mechanics) {
-
-    }
-
 
     @Override
     public String toString() {

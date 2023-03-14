@@ -71,7 +71,9 @@ public  abstract class Transport<T extends Driver> implements Сompeting{
     }
 
     public void addMechanik(Mechanic mechanic) {
-        mechanics.add(mechanic);
+        if (!mechanics.contains(mechanic)) {
+            mechanics.add(mechanic);
+        }
     }
 
     public int getMechanicQuantity() {
@@ -125,8 +127,6 @@ public  abstract class Transport<T extends Driver> implements Сompeting{
     public abstract void printType();
 
     public abstract void passDiagnostics();
-
-    public abstract void createMechanicTeam(Mechanic... mechanics);
 
     @Override
     public String toString() {
