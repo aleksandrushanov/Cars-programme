@@ -1,13 +1,13 @@
 package Transport;
 
-
-
+import Driver.DriverC;
+import Mechanic.Mechanic;
 
 public class Truck extends Transport {
     private LoadCapacity loadCapacity;
 
-    public Truck(String brand, String model, double engineVolume, LoadCapacity loadCapacity) {
-        super(brand, model, engineVolume);
+    public Truck(String brand, String model, double engineVolume, int mechanicQuantity, DriverC driver, LoadCapacity loadCapacity, Mechanic mechanic) {
+        super(brand, model, engineVolume, mechanicQuantity, driver);
         this.loadCapacity = loadCapacity;
     }
 
@@ -42,6 +42,9 @@ public class Truck extends Transport {
     public void passDiagnostics() {
         System.out.println("Грузовик "+getBrand() +getModel()+" проходит диагностику");
     }
+
+
+
 
     @Override
     public void pitStop() {

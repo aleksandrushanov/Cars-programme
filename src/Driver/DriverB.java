@@ -23,11 +23,6 @@ public class DriverB<T extends Transport> extends Driver {
     }
 
     @Override
-    public String toString() {
-        return super.toString();
-    }
-
-    @Override
     public boolean equals(Object o) {
         return super.equals(o);
     }
@@ -41,5 +36,10 @@ public class DriverB<T extends Transport> extends Driver {
         System.out.println("Водитель " + getName() + " категории " + getCategory() + " управляет транспортным средством: " + transport.getBrand() + " " +
                 transport.getModel() + " и будет участвовать в гонке");
         transport.printType();
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }

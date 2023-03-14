@@ -1,6 +1,5 @@
 package Driver;
 
-import Transport.Transport;
 
 import java.util.Objects;
 
@@ -82,9 +81,10 @@ public abstract class Driver {
     @Override
     public String toString() {
         return "Driver{" +
-                "name='" + name + '\'' +
-                ", availabilityOfRights=" + availabilityOfRights +
-                ", experience=" + experience +
+                "Имя " + name + '\'' +
+                ", наличие прав=" + availabilityOfRights +
+                ", опыт =" + experience +
+                ", категория прав ='" + category + '\'' +
                 '}';
     }
 }
